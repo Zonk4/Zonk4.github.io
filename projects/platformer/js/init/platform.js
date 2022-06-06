@@ -35,7 +35,11 @@
          * bottom of the game.
          */
         createPlatform(0, game.world.height - 32, 3, 2);    // DO NOT DELETE
-
+        createPlatform(659, 625, 0.6);// far right bottom platform 
+        createPlatform(370, 525, 0.6);// middle platform 
+        createPlatform(0, 460, 0.2); // far left platform 
+        createPlatform(659, 430, 0.6);// last coin plat hard
+        createPlatform()
         // example:
         createPlatform(400, 250);
         createPlatform(170, 460, 0.5);
