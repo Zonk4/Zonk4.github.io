@@ -39,7 +39,7 @@
         createPlatform(370, 525, 0.6);// middle platform 
         createPlatform(0, 460, 0.2); // far left platform 
         createPlatform(659, 430, 0.6);// last coin plat hard vv
-        createPlatform(659, 430, 0.6)
+        
         
         createPlatform(400, 250);
         createPlatform(170, 460, 0.5);
