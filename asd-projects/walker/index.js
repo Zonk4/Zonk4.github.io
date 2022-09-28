@@ -46,16 +46,20 @@ function runProgram(){
   */
   function handleKeyDown(event) {
      if (event.which === KEY.LEFT) {   
-      console.log("LEFT Key Pressed");  
+      console.log("LEFT Key Pressed"); 
+      speedX = -5;
     }
     else if (event.which === KEY.RIGHT) { 
       console.log("RIGHT Key Pressed");
+      speedX = 5;
     }                                // Tells that which arrow key is pressed in consle 
     else if (event.which === KEY.UP) {
       console.log("UP Key Pressed");
+      speedY = -5;
     }
     else if (event.which === KEY.DOWN) {
       console.log("DOWN Key Pressed");
+      speedY = 5;
     }
   }
 
@@ -64,13 +68,13 @@ function runProgram(){
   ////////////////////////////////////////////////////////////////////////////////
 
   function repositionGameItem() {
-    if ( positionX > 440) {
-      positionX - 1; 
-    }
+    positionX += speedX;
+    positionY += speedY;
   }
   
   function redrawGameItem() {
-
+    $("#walker").css("top", positionY);    // draw the box in the new location, positionX pixels away from the "left"
+    $("#walker").css("left", positionX);    // draw the box in the new location, positionX pixels away from the "left"
   }
   
   
