@@ -12,11 +12,21 @@ function runProgram(){
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   
   // Game Item Objects
+  var KEY = {
+    "LEFT" : 37,
+    "RIGHT" : 39,
+    "UP" : 38,
+    "DOWN" : 40,
+    }
 
+    var positionX = 0;
+    var positonY = 0;
+    var speedX = 0;
+    var speedY = 0;
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('eventType', handleEvent);                           // change 'eventType' to the type of event you want to handle
+  $(document).on('keydown', handleKeyDown);                           // change 'eventType' to the type of event you want to handle
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -34,14 +44,36 @@ function runProgram(){
   /* 
   Called in response to events.
   */
-  function handleEvent(event) {
-
+  function handleKeyDown(event) {
+     if (event.which === KEY.LEFT) {   
+      console.log("LEFT Key Pressed");  
+    }
+    else if (event.which === KEY.RIGHT) { 
+      console.log("RIGHT Key Pressed");
+    }                                // Tells that which arrow key is pressed in consle 
+    else if (event.which === KEY.UP) {
+      console.log("UP Key Pressed");
+    }
+    else if (event.which === KEY.DOWN) {
+      console.log("DOWN Key Pressed");
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
+  function repositionGameItem() {
+    if ( positionX > 440) {
+      positionX - 1; 
+    }
+  }
+  
+  function redrawGameItem() {
+
+  }
+  
+  
   
   function endGame() {
     // stop the interval timer
