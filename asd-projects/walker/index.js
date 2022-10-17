@@ -20,13 +20,13 @@ function runProgram(){
     }
 
     var positionX = 0;
-    var positonY = 0;
+    var positionY = 0;
     var speedX = 0;
     var speedY = 0;
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('keydown', handleKeyDown);                           // change 'eventType' to the type of event you want to handle
+  $(document).on('keydown', handleKeyDown, 'keyup', handleKeyUp);                           // change 'eventType' to the type of event you want to handle
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -37,8 +37,8 @@ function runProgram(){
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
-
+    redrawGameItem()
+    repositionGameItem()
   }
   
   /* 
@@ -62,7 +62,21 @@ function runProgram(){
       speedY = 5;
     }
   }
+function handleKeyUp(event) {
+if (event.which === KEY.LEFT) {
+  speedX = 0;
+}
+else if (event.which === KEY.RIGHT) {
+  speedX = 0;
+}
+else if (event.which === KEY.UP) {
+  speedY = 0;
+}
+else if (event.which === KEY.DOWN) {
+  speedY = 0;
+}
 
+}
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
