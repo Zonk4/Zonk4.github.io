@@ -8,7 +8,8 @@
 - Visual Game Componets 
 1.the visual will be a box and paddle
    box will be static and the paddle will be animated
-2. will need speedX/speedY for the ball, postionX. Data for the score count, a counting timer, 
+2. will need speedX/speedY for the ball speedX and Y for paddles, postionX for ball, handleKeyup and down of w/s and arrown key up/down for paddle, . Data for the score count, a counting timer, 
+ borders for the box where the game is taking place 
 
 
 - Events/Logic
