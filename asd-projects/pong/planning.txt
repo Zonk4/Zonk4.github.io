@@ -2,13 +2,13 @@
 1. 2 players play a game of ping pong  and try to get the ball past one players pong
 2. everyone starts at 0 points and the ball starts in the middle of the field 
 3. the game ends when a player gets 5 points 
-4. if the ball hits a player wall then the person do did it gets 1 point
+4. if the ball hits a player wall then the person do did it gets 1 point, if ball hits the top/bottom or right/left sides of the box theres to be a if statement that makes the ball go backwards
 
 
 - Visual Game Componets 
-1.the visual will be a box and line(the pong) 
-   box will be static and the line will be animated
-2. will need speedX/speedY for the ball, postionX 
+1.the visual will be a box and paddle
+   box will be static and the paddle will be animated
+2. will need speedX/speedY for the ball, postionX. Data for the score count, a counting timer, 
 
 
 - Events/Logic
@@ -17,4 +17,5 @@
 3. 
 3-1 the ball is flung in a random way at a set speed
 3-2 if ball hits a player wall it there players gets a point that is kept tracked of for others to see
-3-3 the ball is put at the starting postion for there to be another for someone to score
+3-3 the ball is put at the starting postion for there to be another chance for someone to score
+3-4 an event where the ball goes backwards if it hits a wall inside the box 
