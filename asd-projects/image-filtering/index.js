@@ -31,8 +31,8 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2 & 4: Create the applyFilter function here
-function applyFilter(filterFunction) {
-  for (var r = 0; r < image.length; r++) {
+function applyFilter(filterFunction) {          // a HoF that uses other functions to apply filters to the image
+  for (var r = 0; r < image.length; r++) {      
     var row = image[r];
 
     for (var c = 0; c < row.length; c++) {
@@ -62,7 +62,7 @@ function applyFilterNoBackground() {
   }
 }
 // TODO 5: Create the keepInBounds function
-function keepInBounds(inside) {
+function keepInBounds(inside) {   // another filter to pass thru applyFilter 
   if (inside <= 0) {
     return 0;
   } else if (inside > 255) {
@@ -70,16 +70,16 @@ function keepInBounds(inside) {
   } else return inside;
 }
 // TODO 3: Create reddify function
-function reddify(imageArray) {
+function reddify(imageArray) { // filter function 
   imageArray[RED] = 200;
 }
 // TODO 6: Create more filter functions
 function decreaseBlue(decrease) {
-  decrease[BLUE] = keepInBounds(decrease[BLUE] - 50);
+  decrease[BLUE] = keepInBounds(decrease[BLUE] - 50); // subtracts 50 from blue to get a different color 
 }
 
 function increaseGreenByBlue(increase) {
-  increase[GREEN] = keepInBounds(increase[BLUE] + increase[GREEN]);
+  increase[GREEN] = keepInBounds(increase[BLUE] + increase[GREEN]); // Green filter is changed 
 }
 // CHALLENGE code goes below here
 // comments and explain what the functions do 
